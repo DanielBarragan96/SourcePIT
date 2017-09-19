@@ -8,9 +8,12 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
+
 #include "DataTypeDefinitions.h"
 
+
 #define ERROR 0x02
+
 
 typedef struct
 {
@@ -21,6 +24,8 @@ typedef struct
 	uint8 flagPortE : 1;
 } GPIO_interruptFlags_t;
 
+
+void NVIC_EnableIRQ	(IRQn_Type 	IRQn);
 
 
 

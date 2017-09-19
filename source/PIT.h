@@ -10,10 +10,6 @@
 
 #include "DataTypeDefinitions.h"
 
-
-#define PIT_CLOCK_GATING 0X80000u;
-
-
 /*! This enumerated constant are used to select the PIT to be used*/
 typedef enum {PIT_0,PIT_1,PIT_2,PIT_3} PIT_Timer_t;
 
@@ -31,9 +27,7 @@ typedef enum {PIT_0,PIT_1,PIT_2,PIT_3} PIT_Timer_t;
  	 \param[in]  portName Port to be configured.
  	 \return void
  */
-void PIT_delay(PIT_Timer_t pitTimer,float systemClock ,float perior);
-
-
+void PIT_delay(PIT_Timer_t pitTimer,float systemClock ,float period);
 
 void PIT_clockGating(void);
 
@@ -42,7 +36,7 @@ uint8 PIT_interruptFlagStatus(void);
 
 uint8 PIT_getIntrStutus(void);
 
-void PIT_clear(void);
+void PIT_clear(PIT_Timer_t pitTimer);
 
 
 #endif /* PIT_H_ */
