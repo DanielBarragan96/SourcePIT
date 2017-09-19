@@ -31,6 +31,7 @@
 /**
  * @file    PIT_Delay.c
  * @brief   Application entry point.
+ * Avelar Díaz José Francisco
  */
 #include <stdio.h>
 #include "PIT.h"
@@ -42,7 +43,6 @@
 #define DELAY_1 0.25F
 #define DELAY_2 0.01785F
 #define DELAY_3 0.00050F
-
 
 int main(void) {
 
@@ -59,14 +59,13 @@ int main(void) {
 
     while(1) {
     	GPIO_tooglePIN(GPIO_D,BIT0);
-    	pitIntrStatus = PIT_getIntrStutus();
-		PIT_delay(PIT_0,SYSTEM_CLOCK,DELAY_1);
-		while(FALSE == pitIntrStatus);
+    	PIT_clear(PIT_0);
+		PIT_delay(PIT_0,SYSTEM_CLOCK,DELAY_3);
+		while(FALSE == PIT_getIntrStutus());
 		GPIO_tooglePIN(GPIO_D,BIT0);
-		PIT_clear();
-		PIT_delay(PIT_0,SYSTEM_CLOCK,DELAY_1);
-		pitIntrStatus = PIT_getIntrStutus();
-		while(FALSE == pitIntrStatus);
-    }
+		PIT_clear(PIT_0);
+		PIT_delay(PIT_0,SYSTEM_CLOCK,DELAY_3);
+		while(FALSE == PIT_getIntrStutus());
+	}
     return 0 ;
 }
