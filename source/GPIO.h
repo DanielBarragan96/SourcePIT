@@ -8,12 +8,9 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-
 #include "DataTypeDefinitions.h"
 
-
 #define ERROR 0x02
-
 
 typedef struct
 {

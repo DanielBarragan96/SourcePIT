@@ -10,6 +10,10 @@
 
 #include "DataTypeDefinitions.h"
 
+
+#define PIT_CLOCK_GATING 0X80000u;
+
+
 /*! This enumerated constant are used to select the PIT to be used*/
 typedef enum {PIT_0,PIT_1,PIT_2,PIT_3} PIT_Timer_t;
 
