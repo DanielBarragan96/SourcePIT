@@ -17,6 +17,8 @@
 /*! This enumerated constant are used to select the PIT to be used*/
 typedef enum {PIT_0,PIT_1,PIT_2,PIT_3} PIT_Timer_t;
 
+//SIM->SCGC6 |= PIT_CLOCK_GATING; /** Bit 9 of SIM_SCGC5 is  set*/
+
 
 /********************************************************************************************/
 /********************************************************************************************/
@@ -34,7 +36,6 @@ typedef enum {PIT_0,PIT_1,PIT_2,PIT_3} PIT_Timer_t;
 void PIT_delay(PIT_Timer_t pitTimer,float systemClock ,float perior);
 
 
-
 void PIT_clockGating(void);
 
 uint8 PIT_interruptFlagStatus(void);
@@ -42,7 +43,7 @@ uint8 PIT_interruptFlagStatus(void);
 
 uint8 PIT_getIntrStutus(void);
 
-void PIT_clear(void);
+//void PIT_clear(void);
 
 
 #endif /* PIT_H_ */
